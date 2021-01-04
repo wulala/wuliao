@@ -1,0 +1,107 @@
+
+page {
+    height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  box-sizing: border-box;
+  background: #f5f5f5;
+}
+
+.add_container {
+    position: fixed;
+    right: 7pt;
+    top: 10rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 0 12rpx;
+    border-radius: 4rpx;
+    background: rgb(229 246 253) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAnFBMVEUAAAD/wwD/wQD/wwH/wwH/wwH/wwL/wwD/wwD/wwH/wwH/wgD/wwD/xAD/yQD/wwL/wwL/xAD/wwD/wwD/wwD/xAD/wwH/wwH/xAH/wwH/wwD/xAD/xgD/wwH/wwL/wwD/wwH/wwH/wwD/wwH/wwH/wwD/xAH/wwH/wgD/wwD/wwD/xAD/wwH/wwH/wwL/xAL/xAL/xQD/wQD/wwG5yf56AAAAM3RSTlMAQIDAyfSUW3Pk2E4pVwyohiUiaBwIuq7U0HtrEbWMZL2rFsSxYOvndjw3cffvop+YRi14puhQAAACtklEQVR42uzZx3LCMBSF4QDuBtwoCcVACkmY9PP+75Ydi9xY0uUsnMzo2/+esS3ZI+nK8zzP88ym1WCSJJPnek53epu8zXAWrAZMpze4f8EPaVQRnc74A785rqZEpzB8RYfrmO/sChiUbGd3A6MD19mFsNhTnf7+pZborCI4aIjOooSTmOiMcrh5nBGdyQKOSqIziOEqHBNdtwDOIr6TYihUdCcVUEjYTpqGUBixnRRDZUZ20gEqa7KTAqhEZCdlUFmSnZRCJSA7KYRKSnYSlC7t/u4T6H0M9D4Lev8OFFBpyE7KoXJLdtI8hMKW7qR3KDRcx/+Pa76TRnAWUR0/DMMx1fEzsSQ6k5NqhcN30hOc7KiOfwkt0VllsFoynd0RFluq4/coHtjObo1u6Sff2eV7dHj7IjqNJgOkRU50SpthIC6zozq9U5nh7C6pL+3+7XmB5323a8eqCQRRFIbvrikngUhMJiFCohaCpe//blZ6ioPMXH4Vizm9+CHOwu6/Y0+xnvM8zb27Uzecjp2bg3dDDODdEAN4N+QA3g05gHdDDuDdkAN4N3TA4voE4N3QANprJIa6oQBAQLqhAEBAuqEASMC74ZQrtDfvhgL8AwHofwIEEJD+J0B8Je6FeTd0QFLAu6EDYpcR8G7ogFVawHuBABL0PBPjxcQAeQFvRg6I1Toh4NXMAfG2zrw3w7uhAFDAfwEJPu2wPOQ/QAX8FGi/JnjQdUCCv4QA9T8HuOAQjYH+ZwAJFm0B74YO0DYJAel/AgAB6X8CuGDbeIEJdcMGwAT7sLFu6ICkgHdDB/g+GgLYDR3gghd97Cc03g0dAASk/wkABKD/GcC3bAhg/5vOiy7BHLwb5rf8NgHqhvm9XwS14G6IBLXgbogEtbBuSFaqvh/0PySohfUCLCgxNjY2NvZ8OwE+gOJv+JINtwAAAABJRU5ErkJggg==) 8rpx / 30rpx no-repeat;
+    padding-left: 44rpx;
+  }
+  
+  .add:before {
+    position: absolute;
+    top: -20rpx;
+    right: 43pt;
+    content: '';
+    border-right: 10rpx transparent dashed;
+    border-left: 10rpx transparent dashed;
+    border-top: 10rpx transparent dashed;
+    border-bottom: 10rpx rgb(229 246 253) solid;
+   }
+  
+   .add_hide {
+     width: 48rpx;
+     height: 48rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAbFBMVEUAAACYmJiampqXl5eZmZmampqZmZmampqZmZmampqZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmampqZmZmampqZmZmYmJiVlZWampqampqZmZmampqYmJiYmJibm5uampqZmZmQ7+gDAAAAI3RSTlMAKtSAf1H2OeQz8NqL6d6mnJaGoJE/rEpGIgq9Q8doZV4XdNkHm5kAAAJLSURBVHja7dvJTgJRFAbhhqZpkEEGaebJ+/7vaADbs4CkFqZuXPjvOC6+SpMQY6T43x9ZNT+m/Xhb5FrZDAZNGa+P6b7ppciybfPw+ufvwyy1iyhxne6P93jmq5SgwPLTMh4AFAh+PIJuggLPT9Xt9pagwPED2yco8Py0uV3HCQo8P13v5z4USH5AiwQFlr9vf9RAgeR3O0W7dyjQfCjQfSjQfSqwfS6wfS7QfS7wfS7w/dgSCgSfCwzfLWDfLWBfLWCfN4MCwecC2+cC2eeCnuBbBez7Bezz5lAg+Fxg+1xg+1xg+1yg+1zg+1zg+7EPLmDfLWDfLWDfLWDfLWDfLWBfLfD92BgKwHcK2LcLyPcL0PcL2PcLfD+2eC4g3y8A3y8A3y8QfCiwfS6wfS4A318Jvr8e+P5K8P31Mvr8+yf/Fcf1uUD28xd0RoHaBeznLxiGbxewzwWuzwWyzwW+3y1zFgynLz5/oUD3CyjQfSjQ/XwF9UsfCnQ/X0E9eOVDge5Tge1zge1zge1zge/7BasJ+FBg+1xg+1xg+1wg+1zQc3y/4AC+XXB4A18qYN8vYN8v2IBvFLDvF7DvF7DvF6zBtwvWffCFAsGHAs3ngvIXvlzAvl9QgW8UsO8XsO8XsO8XVAl8oYB9t4B9t4B9v4B9v4B9v2B3BN8rqOIOvlQw2t3ODfhmQX27DsA3C04RAL5UcI63AHypYBgn8J2Cye5+6oPvFYwfl3P7ep/7/w/ay3YZH0w5Vo2evujduXxurkW27erTqb6//19X9BQIzzY28QAAAABJRU5ErkJggg==) center / 20rpx no-repeat;
+    margin-left: 10rpx;
+    border-left: 1rpx solid #fff;
+   }
+  
+  .add_txt {
+    font-size: 24rpx;
+    line-height: 2; 
+    display: block;
+    color: #666;
+  }
+
+.item {
+    position: relative; 
+    margin-bottom: 80rpx;
+    width: 100%;
+    height: 25%;
+    box-sizing: border-box;
+    border-radius: 6rpx;
+    box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(51, 51, 51, 0.1);
+}
+.item_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bg_pic {
+    width: 100%;
+    height: 100%;
+}
+
+.item_content {
+    position: relative;
+    z-index: 2;
+    padding: 40rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+ 
+.content_txt {
+    font-size: 36rpx;
+    /* color:rgb(3, 169, 243); */
+    /* color: white;  */
+    color: #666;
+    text-shadow: 1px 1px 1px white;
+
+}
+
+.tag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10rpx;
+    border-radius: 6rpx;
+    box-shadow: -2px -2px 5px white ;
+}
+.tag_txt {
+    font-size: 24rpx;
+    color:#ccc;
+    display: block;
+    line-height: 1.2;
+}

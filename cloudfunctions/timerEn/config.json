@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "openapi": []
+  },
+  "triggers": [
+    {
+      "name": "getEnDataTrigger",
+      "type": "timer",
+      "config": "3 0 0 * * * *"
+    }
+  ]
+}

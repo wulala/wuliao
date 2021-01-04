@@ -1,0 +1,41 @@
+<view class="container">
+    <block wx:if="{{ loading }}">
+        <view class="tip_container">
+            <view class="tip">
+                <text class="tip_txt">{{ tip }}</text>
+                <view class="loading">
+                    <text class="loading_txt">数据加载中...</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="nothing" wx:if="{{ !list.length }}">
+            <image class="no_pic" src="../../pic/empty.png"></image>
+            <view class="no_txt">
+                <text>这里什么都没有。</text>
+            </view>
+        </view>
+        <navigator wx:for="{{ list }}" url="/pages/{{ item.type }}/index?id={{ item.data._id }}" class="item item_bg_{{ item.class_index }}">
+            <block wx:if="{{item.type == 'article'}}">
+                <view class="title">
+                    <text class="title_txt">{{ item.data.title }}</text>
+                </view>
+                <view class="author">
+                    <text class="author_txt">{{ item.data.author }}</text>
+                </view>
+            </block>
+            <block wx:if="{{item.type == 'en'}}">
+                <view class="title">
+                    <text class="title_txt">{{ item.data.content }}</text>
+                </view>
+            </block>
+            <view class="btm">
+                <view class="time">
+                    <text class="time_txt">{{ item.date }}</text>
+                </view>
+                <view class="{{ item.liked ? 'liked' : '' }}"></view>
+            </view>
+        </navigator>
+    </block>
+</view>

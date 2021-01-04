@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+    {
+      "name": "getTodayDataTrigger",
+      "type": "timer",
+      "config": "10 0 0 * * * *"
+    }
+  ]
+}

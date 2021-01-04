@@ -1,0 +1,31 @@
+<view class="container">
+    <block wx:if="{{ loading }}">
+        <view class="tip_container">
+            <view class="tip">
+                <text class="tip_txt">{{ tip }}</text>
+                <view class="loading">
+                    <text class="loading_txt">数据加载中...</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="title">
+            <text class="title_txt">{{ article.article.title }}</text>
+        </view>
+        <view class="content">
+            <text selectable class="content_txt">{{ article.article.content }}</text>
+        </view>
+        <view class="author">
+            <text class="author_txt">
+                《{{article.article.title}}》· {{ article.article.author }}
+            </text>
+        </view>
+        <view class="btns">
+            <view class="like {{  article.liked ? 'liked' : '' }}" bindtap="changeLike"></view>
+            <view class="share">
+                <button open-type="share" size="mini" class="share_btn" bindtap="push"></button>
+            </view>
+        </view>
+    </block>
+</view>
