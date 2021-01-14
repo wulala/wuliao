@@ -1,0 +1,25 @@
+
+.tip_container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tip_txt {
+    font-size: 32rpx;
+    line-height: 1.2;
+    color: #666;
+}
+
+.loading {
+    margin: 40rpx 0;
+}
+.loading_txt {
+    font-size: 24rpx;
+    color: #ccc;
+}

@@ -1,13 +1,6 @@
 <view class="container">
     <block wx:if="{{ loading }}">
-        <view class="tip_container">
-            <view class="tip">
-                <text class="tip_txt">{{ tip }}</text>
-                <view class="loading">
-                    <text class="loading_txt">数据加载中...</text>
-                </view>
-            </view>
-        </view>
+        <tip />
     </block>
     <block wx:else>
         <view class="title">

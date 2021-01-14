@@ -1,20 +1,13 @@
 <view class="container">
     <block wx:if="{{ loading }}">
-        <view class="tip_container">
-            <view class="tip">
-                <text class="tip_txt">{{ tip }}</text>
-                <view class="loading">
-                    <text class="loading_txt">数据加载中...</text>
-                </view>
-            </view>
-        </view>
+        <tip />
     </block>
     <block wx:else>
         <div class="pic_container">
             <image class="pic" mode="aspectFit" src="{{ en.en.pic }}"></image>
         </div>
         <view class="btns">
-            <view class="btn {{ play_class }}" bindtap="mp3"></view>
+            <view class="btn {{ playClass }}" bindtap="mp3"></view>
             <view class="btn like {{ en.liked ? 'liked' : '' }}" bindtap="changeLike"></view>
             <view class="btn download" bindtap="download"></view>
             <view class="btn share">
