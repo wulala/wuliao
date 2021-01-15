@@ -1,7 +1,8 @@
 Page({
     data: {
         loading: true,
-        article: {}, // 文章相关数据
+        // 文章相关数据
+        article: {},
         timer: null,
     },
 

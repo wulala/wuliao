@@ -13,7 +13,7 @@ module.exports = {
         "array-callback-return": "error", // 数组回调要有return
         "array-bracket-newline": ["error", 'never'], // 禁止数组[]括号不换行
         "array-bracket-spacing": "error", // []内禁止空格
-        "array-element-newline": ["error", 'never'], // 禁止数组元素换行
+        "array-element-newline": ["error", { "minItems": 5 }], // 数组元素大于5个换行
         "no-array-constructor": "error", // 禁止数组构造函数，用 []
 
         /* ------------- var -------------*/
@@ -56,7 +56,11 @@ module.exports = {
         //     "capIsNew": false,
         // }], 
         "new-parens": ["error", 'never'], // 构造函数调用禁止()
-        "space-before-function-paren": ["error", 'never'], // function圆括号之前不能有空格
+        "space-before-function-paren": ["error", {
+            "anonymous": "never",
+            "named": "never",
+            "asyncArrow": "always"
+        }], // function圆括号之前不能有空格
         "arrow-body-style": ["error", 'as-needed'], // 箭头函数体 是否需要()， 根据情况
         "arrow-parens": ["error", 'as-needed'], // 箭头函数的参数是否需要 ()
         "arrow-spacing": "error", // 箭头函数的箭头前后需要空格
@@ -189,8 +193,8 @@ module.exports = {
                 }
             }],
 
-        "template-tag-spacing": ["error", "always"],// 模板插值要有括号
-        "template-curly-spacing": ["error", 'always'], // 模板插值要有括号
+        // "template-tag-spacing": ["error", "always"],// 模板插值要有括号
+        // "template-curly-spacing": ["error", 'always'], // 模板插值要有括号
 
         "prefer-template": "error", // 使用字符串模板
         "line-comment-position": ["error", 'above'], // 行注释（//）只能在代码上方
