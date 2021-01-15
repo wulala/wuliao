@@ -1,0 +1,6 @@
+<view class="container">
+    <view class="p" wx:for="{{ chapter.en }}" wx:key="index">
+        <text class="en">{{ item }}</text>
+        <text class="cn">{{ chapter.cn[index] }}</text>
+    </view>
+</view>

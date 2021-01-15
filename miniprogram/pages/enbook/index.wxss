@@ -1,0 +1,16 @@
+.p {
+    margin-bottom: 60rpx;
+}
+.cn {
+    text-align: justify;
+    display: inline-block;
+    vertical-align: middle;  
+    color: #666;
+    font-size: 30rpx;
+}
+.en {
+    display: block;
+    margin-bottom: 10rpx;
+    font-size: 30rpx;
+    font-weight: 400;
+}

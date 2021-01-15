@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/enbook/index",
     "pages/index/index",
-    "pages/solidot/index",
     "pages/en/index",
     "pages/article/index",
     "pages/read/index"
@@ -34,6 +34,9 @@
     ]
   },
   "component": true,
+  "usingComponents": {
+    "tip": "components/tip/index"
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
