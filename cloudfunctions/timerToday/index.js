@@ -34,7 +34,16 @@ exports.main = async (event, context) => {
     console.log(articleData, '获取文章数据')
 
     const queryEn = await db.collection('endata').skip(todayNum).limit(1).get()
-    const enData = queryEn.data
+    let enData = queryEn.data
+    console.log(enData, '获取的英语数据')
+
+    if (!enData.length) {
+        const res = await cloud.callFunction({ name: 'timerEn', })
+        console.log(res.result, '重新获取结果')
+
+        enData = [res.result.data]
+    }
+
     data = {
         articleId: articleData[0]._id,
         enId: enData[0]._id,

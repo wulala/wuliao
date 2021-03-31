@@ -4,11 +4,10 @@ cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV, })
 
 const db = cloud.database()
 
-// 云函数入口函数
-exports.main = async (event, context) => {
+const index = async (event, context) => {
     const wxContext = cloud.getWXContext()
     let data = {}
-    let status = 1
+    const status = 1
     let date = null
 
     if (wxContext.SOURCE === 'wx_devtools') {
@@ -46,6 +45,13 @@ exports.main = async (event, context) => {
 
         data = _data
     } else {
+        const res = await cloud.callFunction({ name: 'timerToday', })
+        console.log(res, '重新获取结果')
+
+        if (res.result.status === 1) {
+            return index(event, context)
+        }
+
         status = 0
     }
 
@@ -57,3 +63,6 @@ exports.main = async (event, context) => {
         wxContext,
     }
 }
+
+// 云函数入口函数
+exports.main = index

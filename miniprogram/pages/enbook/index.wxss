@@ -1,3 +1,17 @@
+
+.title {
+    margin-top: 40rpx;
+    margin-bottom: 80rpx;
+}
+.t {
+    display: block;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.n {
+    display: block;
+}
+
 .p {
     margin-bottom: 60rpx;
 }
@@ -13,4 +27,11 @@
     margin-bottom: 10rpx;
     font-size: 30rpx;
     font-weight: 400;
+}
+.en.on {
+    color: rgba(3, 169, 243, 1);
+}
+
+.cn.on {
+    color: rgba(133, 169, 243, 1);
 }
