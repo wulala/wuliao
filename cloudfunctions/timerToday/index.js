@@ -33,13 +33,13 @@ exports.main = async (event, context) => {
     const articleData = queryArticle.data
     console.log(articleData, '获取文章数据')
 
-    const queryEn = await db.collection('endata').skip(todayNum).limit(1).get()
-    let enData = queryEn.data
-    console.log(enData, '获取的英语数据')
+    const queryEn = await db.collection('endata').where({ date: `${year}-${month}-${day}`, }).get()
+    const enData = queryEn.data
+    console.log(enData, '获取的英语数据', await db.collection('endata').count(), '英语数量')
 
     if (!enData.length) {
         const res = await cloud.callFunction({ name: 'timerEn', })
-        console.log(res.result, '重新获取结果')
+        console.log(res.result, '重新获取英语结果')
 
         enData = [res.result.data]
     }
@@ -54,8 +54,10 @@ exports.main = async (event, context) => {
 
     console.log(data, '最终数据')
 
-    
+    const delToday = await db.collection('today').where({ date: `${year}-${month}-${day}`, }).remove()
+
     const addData = await db.collection('today').add({ data, })
+
     console.log(addData, '插入数据库成功')
 
     return {

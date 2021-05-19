@@ -29,16 +29,17 @@ exports.main = async (event, context) => {
         updatedAt: date,
     }
 
-    const addData = null
-    const hasData = await db.collection('endata').where({ date: data.dateline, }).get()
-    if (!hasData.data.length) {
-        await db.collection('endata').add({ data: newData, })
+    let addData = null
+    const queryEn = await db.collection('endata').where({ date: data.dateline, }).get()
+    const enData = queryEn.data
+    if (!enData.length) {
+        addData = await db.collection('endata').add({ data: newData, })
     }
 
-    console.log('插入数据库成功', addData, hasData.data, '已有数据')
+    console.log('插入数据库成功', addData, enData, '已有数据')
 
     return {
-        data,
+        data: addData ? addData : enData[0],
         status: 1,
     }
 }
