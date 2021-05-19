@@ -54,6 +54,7 @@ exports.main = async (event, context) => {
 
     console.log(data, '最终数据')
 
+    
     const addData = await db.collection('today').add({ data, })
     console.log(addData, '插入数据库成功')
 

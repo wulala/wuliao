@@ -29,8 +29,13 @@ exports.main = async (event, context) => {
         updatedAt: date,
     }
 
-    const addData = await db.collection('endata').add({ data: newData, })
-    console.log('插入数据库成功', addData)
+    const addData = null
+    const hasData = await db.collection('endata').where({ date: data.dateline, }).get()
+    if (!hasData.data.length) {
+        await db.collection('endata').add({ data: newData, })
+    }
+
+    console.log('插入数据库成功', addData, hasData.data, '已有数据')
 
     return {
         data,
